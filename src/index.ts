@@ -1,20 +1,16 @@
 import { User } from './User';
 import { Company } from './Company';
-;
+import { CustomMap } from './CustomMap';
 
 
-const person = new User;
-console.log(person)
+const user = new User;
+console.log(user)
 
 const company = new Company;
 console.log(company)
 
-const map = document.getElementById("map")
-new google.maps.Map(map, {
-  backgroundColor: "blue",
-  zoom: 8,
-  center: {
-    lat: 0,
-    lng: 0
-  }
-})
+const map: HTMLElement = document.getElementById("map")
+const googleMap = new CustomMap(map)
+googleMap.addMarker(company);
+googleMap.addMarker(user)
+
